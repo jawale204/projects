@@ -1,0 +1,1 @@
+var pro='{name: OPTIMA Travel Laptop Backpack, Business Slim Durable Laptops Backpack,Water Resistant College School Computer Bag for Women & Men Fits 15.6 Inch Laptop and Notebook - Blue, link: /Backpack-Business-Resistant-Computer-Notebook/dp/B07HN3S8K3, rating: 3.9 out of 5 stars, price: 429, imglink: https://m.media-amazon.com/images/I/41IScU2Du4L._AC_UY218_ML3_.jpg}';

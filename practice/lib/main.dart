@@ -11,7 +11,7 @@ class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: LoadingScreen.id,
+      initialRoute: Login.id,
       routes: {
         LoadingScreen.id:(context)=>LoadingScreen(),
         Login.id:(context)=>Login()
