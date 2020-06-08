@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "766627926517",
+    "firebase_url": "https://dream-568de.firebaseio.com",
+    "project_id": "dream-568de",
+    "storage_bucket": "dream-568de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766627926517:android:140a8d6bed586fb6f350bc",
+        "android_client_info": {
+          "package_name": "com.rj.dream"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766627926517-66cefaf6boff45sj4uvkj9r5cugalfk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rj.dream",
+            "certificate_hash": "02af3813a3e845ffe12f75233b87ab0c673b9039"
+          }
+        },
+        {
+          "client_id": "766627926517-1tbdrb9bm8tda1j82jki0iue0b41uu4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbXSHKLjusBOu5Ky6JrdJ-1yWGbkEGJSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766627926517-1tbdrb9bm8tda1j82jki0iue0b41uu4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

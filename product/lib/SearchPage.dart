@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:product/_SearchRequest.dart';
 import 'package:product/buildListView.dart';
@@ -28,9 +30,19 @@ class _SearchPageState extends State<SearchPage>  with TickerProviderStateMixin{
   }
   @override
   Widget build(BuildContext context) {
-    
+      var name=[];
+    var link=[];
+    var rating=[];
+    var price=[];
+    var imageLink=[];
+    int b;
+    var aLL=[];
      var search;
    double screenHeight = MediaQuery.of(context).size.height;
+   perform()async{
+   AmazonProduct=await SearchRequest(controller.text,0);
+   return AmazonProduct;
+   }
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomPadding: false,
@@ -49,9 +61,23 @@ class _SearchPageState extends State<SearchPage>  with TickerProviderStateMixin{
               ),
               TextField(
                
-                onSubmitted: (value)async{
-                      setState(()async {
-                         AmazonProduct=await SearchRequest(controller.text,0);
+                onSubmitted: (value){
+                      setState(() async{
+                        AmazonProduct=await perform();
+                        if (AmazonProduct==""){
+                           b=1;}
+                        else{
+                          setState(() {
+                             aLL=sort(AmazonProduct,name,link,rating,price,imageLink);
+                             name=aLL[0];
+                             link=aLL[1];
+                             rating=aLL[2];
+                             print(name);
+                             print(link);
+                             print(rating);
+                          });
+                          
+                        }
                       });
                       
                   
@@ -120,8 +146,25 @@ class _SearchPageState extends State<SearchPage>  with TickerProviderStateMixin{
             child: TabBarView(
               controller: _tabController,
               children: <Widget>[
-               buildListView(0,AmazonProduct),
-                buildListView(1,FlipkartProduct),
+               ListView.builder(
+               itemCount:name.length,
+               itemBuilder: (context,index){
+               return(
+                     Container(
+                        width: 250,
+                        height: 120,
+                        margin: EdgeInsets.all(3.0),
+                        decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(10.0)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(name[index])
+           ),
+         ));
+             },
+       ),
+                buildListView(aLL),
               ],
             ),
         ),
@@ -132,4 +175,23 @@ class _SearchPageState extends State<SearchPage>  with TickerProviderStateMixin{
     ));
   }
 
+}
+
+sort(details,name,link,rating,price,imageLink){
+   String a="product";
+     for (int i=1;i<15;i++){
+      var pro=jsonDecode(details)[a+i.toString()];
+      var nam=(pro)['name'];
+      name.add(nam);
+      var lin=(pro)['link'];
+      link.add(lin);
+      var rat=(pro)['rating'];
+      rating.add(rat);
+      var pri=(pro)['price'];
+      price.add(pri);
+      var img=(pro)['imglink'];
+      imageLink.add(img);
+    
+     }
+     return([name,link,rating,price,imageLink]);
 }
