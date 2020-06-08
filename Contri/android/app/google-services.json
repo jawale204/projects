@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "43691590732",
+    "firebase_url": "https://contree-95746.firebaseio.com",
+    "project_id": "contree-95746",
+    "storage_bucket": "contree-95746.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43691590732:android:3fd5aae816b8e28cfda0e9",
+        "android_client_info": {
+          "package_name": "com.rj.Contree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43691590732-8ukoktaqmo63vmad7bglvkla5398mnu7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rj.Contree",
+            "certificate_hash": "02af3813a3e845ffe12f75233b87ab0c673b9039"
+          }
+        },
+        {
+          "client_id": "43691590732-mufsbhs7j5odiiv5qm8nohhf5hvo0hrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIz9FahrmDWoteNPFGBkATNkmGCGTL9AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43691590732-mufsbhs7j5odiiv5qm8nohhf5hvo0hrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
