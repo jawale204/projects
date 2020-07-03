@@ -25,8 +25,10 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     var user=Provider.of<HandleUser>(context);
     return Scaffold(
+      // Checks if logged in 
     body:!user.isAuth? Center(
     child:
+    //login option
     SaveButton(
       onpress:  (){
         user.login();
@@ -34,6 +36,7 @@ class _WelcomeState extends State<Welcome> {
        txt: 'Sign In With Google',
       )
      ):
+     //main body if loggedin
      Body()
       );
   }

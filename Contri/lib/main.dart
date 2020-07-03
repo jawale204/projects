@@ -1,4 +1,5 @@
 import 'package:Contri/models/HandleUser.dart';
+import 'package:Contri/models/singleGroup.dart';
 import 'package:Contri/screen/Body.dart';
 import 'package:Contri/screen/Welcome.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +31,21 @@ class _NotesState extends State<Notes> {
   }
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context)=>HandleUser(),
+    return MultiProvider(
+      providers:[ 
+        ChangeNotifierProvider(
+         create:  (context)=>HandleUser()
+           ),
+         ChangeNotifierProvider<SingleGroup>(
+         create:  (context)=>SingleGroup()
+           ),
+        ],
           child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         initialRoute:Welcome.id,
         routes: {
            Welcome.id:(context)=>Welcome(),
-            Body.id:(context)=>Body()
+            Body.id:(context)=>Body(),
         }   
       ),
     );

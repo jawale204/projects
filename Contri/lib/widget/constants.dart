@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 const KTextDecoration=InputDecoration(
                 hintText: 'Enter your email',
+
                 hintStyle: TextStyle(
                   color: Colors.white
                 ),
