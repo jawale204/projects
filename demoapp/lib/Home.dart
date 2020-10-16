@@ -67,25 +67,25 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     _scrollcontroller.addListener(listen);
     _scrollcontroller1.addListener(listen1);
     perform();
-   // selectedOption = questions[0];
     super.initState();
   }
 
   listen() {
     var maxscrollValue = _scrollcontroller.position.maxScrollExtent;
+    print(maxscrollValue);
     var div = (maxscrollValue / questions.length) + 10;
     var scrollvalue = _scrollcontroller.offset.round();
     optionValue = (scrollvalue / div).round();
-    // setState(() {
-    //   selectedOption = questions[optionValue];
-    // });
+    print(optionValue);
   }
 
   listen1() {
     var maxscrollValue1 = _scrollcontroller1.position.maxScrollExtent;
+    print(maxscrollValue1);
     var div1 = (maxscrollValue1 / questionOptions.length) + 10;
     var scrollvalue = _scrollcontroller1.offset.round();
     optionValue1 = (scrollvalue / div1).round();
+    print(optionValue1);
   }
 
   perform() {
@@ -225,7 +225,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       height: 1,
                                     ),
                                     ListView.builder(
-                                       physics: const NeverScrollableScrollPhysics(),
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
                                         shrinkWrap: true,
                                         itemCount: questions[index][0].length,
                                         itemBuilder: (context, index1) {
@@ -239,8 +240,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                               child: Padding(
                                                 padding:
                                                     const EdgeInsets.all(4.0),
-                                                child: Text(questions[index]
-                                                    [0][index1],style: TextStyle(fontSize: 15),),
+                                                child: Text(
+                                                  questions[index][0][index1],
+                                                  style:
+                                                      TextStyle(fontSize: 15),
+                                                ),
                                               ));
                                         }),
                                   ],
